@@ -4,6 +4,6 @@ const { brandZoomIn, showAllBrands } = require("../controlers/viewBrandControlle
 const brandsRouter = Router();
 
 brandsRouter.get("/", showAllBrands)
-
 brandsRouter.get('/:brandId', brandZoomIn)
+
 module.exports = brandsRouter;
