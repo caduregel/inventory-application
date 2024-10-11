@@ -1,14 +1,9 @@
 const { Router } = require("express");
+const { brandZoomIn, showAllBrands } = require("../controlers/viewBrandController");
 
 const brandsRouter = Router();
 
-brandsRouter.get("/", (req, res) => {
-    res.send("Here are the brands:")
-})
+brandsRouter.get("/", showAllBrands)
 
-brandsRouter.get('/:brandId', (req, res) => {
-    const { brandId } = req.params
-    res.send("Brand: " +brandId)
-})
-
+brandsRouter.get('/:brandId', brandZoomIn)
 module.exports = brandsRouter;

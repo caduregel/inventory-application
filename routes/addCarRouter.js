@@ -1,7 +1,9 @@
 const { Router } = require("express");
+const postForm = require("../controlers/newCarFormController");
 
-const indexRouter = Router();
+const addCarRouter = Router();
 
-indexRouter.get("/", (req, res) => { res.render("index"), {} });
+addCarRouter.get("/", (req, res)=>{res.send("newCar", {})});
+addCarRouter.post("/", postForm)
 
-module.exports = indexRouter;
+module.exports = addCarRouter;
