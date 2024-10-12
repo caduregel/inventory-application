@@ -9,18 +9,25 @@
 
 <body>
     <h1>Add new model</h1>
-    <form action="POST">
-        <label for="ammount">Model Name:</label>
+    <form method="POST" action="/new_car">
+        <label for="model">Model Name:</label>
         <input type="text" name="model" id="model">
-        <label for="ammount">Brand Name:</label>
-        <select name="cars" id="cars">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+        <label for="brand">Brand:</label>
+        <select name="brands" id="brands">
+            <% allBrands.map(brand=>{%>
+                <option value="<%=brand.brandname%>">
+                    <%=brand.brandname%>
+                </option>
+                <% }) %>
+
         </select>
-        <label for="ammount"></label>
-        <input type="number" name="ammount" id="ammount">
+        <label for="year">Year: </label>
+        <input type="number" min="1900" max="2099" step="1" value="2016" name="year" />
+        <label for="color">Color:</label>
+        <input type="text" name="color" id="color">
+
+        <label for="ammount">Ammount:</label>
+        <input type="number" name="ammount" min="1" step="1"id="ammount">
         <input type="submit" value="Add car">
     </form>
 

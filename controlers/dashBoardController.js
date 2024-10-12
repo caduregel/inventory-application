@@ -4,7 +4,6 @@ const db = require("../db/queries");
 const dashBoardController = asyncHandler(async (req, res) => {
     const cars = await db.getAllCars()
     const [...topBrands] = await db.getTopThreeBrands()
-    console.log(topBrands)
     if (!cars) { res.status(404).send('messages not found') }
 
     res.render("dashBoard", {

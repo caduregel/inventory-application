@@ -8,7 +8,7 @@ const indexRouter = Router();
 
 indexRouter.get("/", dashBoardController);
 
-indexRouter.use("/brand", brandsRouter)
+indexRouter.use("/brands", brandsRouter)
 indexRouter.use("/new_car", addCarRouter)
 indexRouter.use("/car_view", carCloseUpRouter)
 
