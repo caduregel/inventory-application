@@ -3,6 +3,6 @@ const showCar = require("../controlers/carCloseUpController");
 
 const carCloseUpRouter = Router();
 
-carCloseUpRouter.get('/:brand_model', showCar)
+carCloseUpRouter.get('/:id', showCar)
 
 module.exports = carCloseUpRouter;
