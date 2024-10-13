@@ -5,54 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory</title>
+    <link rel="stylesheet" href="/assets/global-styles.css" type="text/css">
+
 </head>
 
 <body>
-    <h1>Dashboard</h1>
-    <div class="stats">
-        <p>Stock count: <%= carCount %>
-        </p>
-        <div class="topBrands">
-            <ol>
-                <li>
+    <%- include('navbar', { brands: brands}) %>
+        <div class="global-container">
+            <h1>Dashboard</h1>
+            <div class="stats">
+                <p>Stock count: <%= carCount %>
+                </p>
+                <div class="topBrands">
+                    <ol>
+                        <li>
+                            <p>
+                                <%= brandFirst.brandname %>
+                            </p>
+                            <p>Count: <%= brandFirst.total_cars %>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <%= brandSecond.brandname %>
+                            </p>
+                            <p>Count: <%= brandSecond.total_cars %>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <%= brandThird.brandname %>
+                            </p>
+                            <p>Count: <%= brandThird.total_cars %>
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="all_cars">
+                <% allCars.map(car=>{%>
+                    <h2>
+                        <%= car.model %>
+                    </h2>
                     <p>
-                        <%= brandFirst.brandname %>
+                        <%= car.brand %>
                     </p>
-                    <p>Count: <%= brandFirst.total_cars %>
+                    <p>Ammount in Stock: <%= car.count %>
                     </p>
-                </li>
-                <li>
-                    <p>
-                        <%= brandSecond.brandname %>
-                    </p>
-                    <p>Count: <%= brandSecond.total_cars %>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <%= brandThird.brandname %>
-                    </p>
-                    <p>Count: <%= brandThird.total_cars %>
-                    </p>
-                </li>
-            </ol>
+                    <img src="<%= car.logo %>" alt="Logo">
+                    <br>
+                    <a href="/car_view/<%= car.id %>">See more</a>
+                    <% }) %>
+            </div>
         </div>
-    </div>
-    <div class="all_cars">
-        <% allCars.map(car=>{%>
-            <h2>
-                <%= car.model %>
-            </h2>
-            <p>
-                <%= car.brand %>
-            </p>
-            <p>Ammount in Stock: <%= car.count %>
-            </p>
-            <img src="<%= car.logo %>" alt="Logo">
-            <br>
-            <a href="/car_view/<%= car.id %>">See more</a>
-            <% }) %>
-    </div>
 
 </body>
 

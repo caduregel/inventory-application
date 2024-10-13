@@ -5,12 +5,13 @@ const db = require("./db/queries");
 // Express
 const express = require("express");
 const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(__dirname + '/public'));
 
 // Views
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-app.use(express.urlencoded({ extended: true }));
 
 // Routes
 const indexRouter = require('./routes/indexRouter')

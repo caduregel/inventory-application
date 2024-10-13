@@ -1,0 +1,34 @@
+.navbar-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #86efac;
+    text-align: left;
+    justify-content: left;
+}
+
+
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    caret-color: transparent;
+}
+
+a {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    padding: 5px;
+}
+
+.brand-link {
+    padding-left: 20%;
+    width: 80%;
+}
+
+a:hover{
+    background-color: #bbf7d0;
+}
