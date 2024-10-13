@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory</title>
-    <link rel="stylesheet" href="/assets/global-styles.css" type="text/css">
-
-</head>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inventory</title>
+        <link rel="stylesheet" href="/assets/global-styles.css" type="text/css">
+        
+    </head>
 
 <body>
     <%- include('navbar', { brands: brands}) %>
@@ -18,27 +18,15 @@
                 </p>
                 <div class="topBrands">
                     <ol>
-                        <li>
-                            <p>
-                                <%= brandFirst.brandname %>
-                            </p>
-                            <p>Count: <%= brandFirst.total_cars %>
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <%= brandSecond.brandname %>
-                            </p>
-                            <p>Count: <%= brandSecond.total_cars %>
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                <%= brandThird.brandname %>
-                            </p>
-                            <p>Count: <%= brandThird.total_cars %>
-                            </p>
-                        </li>
+                        <% topBrands.map(brand=>{%>
+                            <li>
+                                <p>
+                                    <%= brand.brandname %>
+                                </p>
+                                <p>Count: <%= brand.total_cars %>
+                                </p>
+                            </li>
+                            <% }) %>
                     </ol>
                 </div>
             </div>

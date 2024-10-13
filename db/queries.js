@@ -13,7 +13,12 @@ async function getTopThreeBrands() {
 }
 
 async function getAllBrands() {
-    const { rows } = await pool.query("SELECT brandname, logo, SUM(cars.count) AS car_count FROM brands JOIN cars ON brands.brandname = cars.brand GROUP BY brands.brandname, brands.logo ORDER BY car_count DESC;")
+    const { rows } = await pool.query("SELECT * FROM brands;")
+    return rows
+}
+
+async function getAllBrandsWithCarcount() {
+    const { rows } = await pool.query("SELECT brandname, logo, SUM(cars.count) AS car_count FROM brands JOIN cars ON brands.brandname = cars.brand GROUP BY brands.brandname, brands.logo ORDER BY car_count;")
     return rows
 }
 
@@ -31,10 +36,27 @@ async function postNewCar(brand, model, year, color, ammount) {
     await pool.query(query.text, query.values)
 }
 
-module.exports = {
-    getAllCars,
-    getTopThreeBrands,
-    getAllBrands,
-    getBrandCars,
-    postNewCar,
-};
+async function deleteCar(carId){
+    const query = {
+        text: 'DELETE FROM cars WHERE id = $1',
+        values: [carId]
+    }
+    await pool.query(query.text, query.values)
+}
+
+async function getCarCount(){
+    const query = 'SELECT SUM(count) AS count FROM cars;'
+    const {rows} = await pool.query(query)
+    return rows
+}
+
+    module.exports = {
+        getAllCars,
+        getTopThreeBrands,
+        getAllBrands,
+        getAllBrandsWithCarcount,
+        getBrandCars,
+        getCarCount,
+        postNewCar,
+        deleteCar,
+    };

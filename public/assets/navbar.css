@@ -1,12 +1,14 @@
 .navbar-container {
     display: flex;
     flex-direction: column;
-    padding: 20px;
     background-color: #86efac;
     text-align: left;
     justify-content: left;
 }
 
+.title {
+    padding: 20px;
+}
 
 ul {
     display: flex;
@@ -15,13 +17,12 @@ ul {
     caret-color: transparent;
 }
 
-a {
+.nav-link {
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 20px;
     text-decoration: none;
     color: inherit;
-    width: 100%;
-    padding: 5px;
+    padding: 8px;
 }
 
 .brand-link {
@@ -29,6 +30,6 @@ a {
     width: 80%;
 }
 
-a:hover{
+.nav-link:hover {
     background-color: #bbf7d0;
 }

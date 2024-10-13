@@ -11,15 +11,15 @@
 
 <body>
     <div class="navbar-container">
-        <h1>Dealership Tom</h1>
-            <a href="/">Dashboard</a>
-            <a href="/new_car">Add car</a>
-            <a href="/brands">Brands</a>
-                <% brands.map(brand=>{%>
-                    <a href="/brands/<%= brand.brandname %>" class="brand-link">
-                        <%= brand.brandname %>
-                    </a>
-                    <% }) %>
+        <h1 class="title">Dealership Tom</h1>
+        <a href="/" class="nav-link">Dashboard</a>
+        <a href="/new_car" class="nav-link">Add car</a>
+        <a href="/brands" class="nav-link">Brands</a>
+        <% brands.map(brand=>{%>
+            <a href="/brands/<%= brand.brandname %>" class="nav-link" style="padding-left: 20%;">
+                <%= brand.brandname %>
+            </a>
+            <% }) %>
     </div>
 </body>
 

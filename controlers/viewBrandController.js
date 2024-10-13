@@ -2,9 +2,8 @@ const asyncHandler = require("express-async-handler");
 const db = require("../db/queries");
 
 const showAllBrands = asyncHandler(async (req, res) => {
-    const brands = await db.getAllBrands();
+    const brands = await db.getAllBrandsWithCarcount();
     if (!brands) { res.status(404).send('messages not found') }
-
     res.render("brands", {
         brands: brands,
     })

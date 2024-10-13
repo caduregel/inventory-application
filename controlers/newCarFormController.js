@@ -14,7 +14,7 @@ const postForm = asyncHandler(async (req, res) => {
         ammount: req.body.ammount,
     }
     console.log(newCar)
-    db.postNewCar(newCar.brand, newCar.model, newCar.year, newCar.ammount)
+    db.postNewCar(newCar.brand, newCar.model, newCar.year, newCar.color, newCar.ammount)
     res.send('   <p>Car added!</p> <a href="/">Dashboard</a> ')
 })
 
