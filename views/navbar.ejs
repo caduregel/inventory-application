@@ -16,7 +16,7 @@
         <a href="/new_car" class="nav-link">Add car</a>
         <a href="/brands" class="nav-link">Brands</a>
         <% brands.map(brand=>{%>
-            <a href="/brands/<%= brand.brandname %>" class="nav-link" style="padding-left: 20%;">
+            <a href="/brands/<%= brand.brandid %>" class="nav-link" style="padding-left: 20%;">
                 <%= brand.brandname %>
             </a>
             <% }) %>

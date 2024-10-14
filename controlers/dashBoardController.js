@@ -3,6 +3,7 @@ const db = require("../db/queries");
 
 const dashBoardController = asyncHandler(async (req, res) => {
     const cars = await db.getAllCars()
+    console.log(cars)
     const [...topBrands] = await db.getTopThreeBrands()
     const brands = await db.getAllBrands()
     const [carCount] = await db.getCarCount()

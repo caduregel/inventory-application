@@ -21,7 +21,7 @@
             <label for="brand">Brand:</label>
             <select name="brands" id="brands">
                 <% allBrands.map(brand => { %>
-                    <option value="<%= brand.brandname %>">
+                    <option value="<%= brand.brandid %>">
                         <%= brand.brandname %>
                     </option>
                 <% }) %>

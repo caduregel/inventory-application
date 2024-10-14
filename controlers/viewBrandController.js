@@ -14,10 +14,12 @@ const showAllBrands = asyncHandler(async (req, res) => {
 
 const brandZoomIn = asyncHandler(async (req, res) => {
     const cars = await db.getBrandCars(req.params.brandId)
+    const [currentBrand] = await db.getBrandById(req.params.brandId)
+    console.log(currentBrand)
     const brands = await db.getAllBrands()
     if (!cars) { res.status(404).send('brand not found') }
 
-    res.render('brandCloseUp', { cars: cars, brandName: req.params.brandId, brands: brands });
+    res.render('brandCloseUp', { cars: cars, brandName: currentBrand.brandname, brands: brands });
 })
 
 module.exports = { showAllBrands, brandZoomIn }
