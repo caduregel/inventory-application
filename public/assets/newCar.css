@@ -1,0 +1,61 @@
+.form-container {
+    margin-top: 10vh;
+    margin-left: 10vw;
+    /* Add margin-top for vertical spacing if you don’t want perfect vertical centering */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+input[type="submit"] {
+    background-color: #86efac; /* Same light green as before */
+    color: #065f46; /* Dark green text color */
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #34d399; /* Slightly darker green on hover */
+}
+
+input[type="submit"]:active {
+    background-color: #059669; /* Even darker green when clicked */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .global-container {
+        padding: 10px;
+    }
+
+    input[type="text"], input[type="number"], select {
+        font-size: 0.9rem;
+    }
+
+    input[type="submit"] {
+        font-size: 0.9rem;
+    }
+}

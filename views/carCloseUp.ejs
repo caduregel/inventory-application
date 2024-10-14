@@ -4,31 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= car.model %>
-    </title>
+    <title><%= car.model %></title>
     <link rel="stylesheet" href="/assets/global-styles.css" type="text/css">
+    <link rel="stylesheet" href="/assets/car.css" type="text/css">
 
 </head>
 
 <body>
     <%- include('navbar', {brands: brands}) %>
-        <div class="global-container">
-            <h1>Car Details</h1>
-            <h2>
-                <%= car.model %>
-            </h2>
-            <p>
-                <%= car.brand %>
-            </p>
-            <p>Ammount in Stock: <%= car.count %>
-            </p>
-            <form action="/car_view/<%= car.id %>?_method=DELETE" method="POST" style="display:inline;">
-                <button type="submit">Delete</button>
-            </form>
-            <img src="<%= car.logo %>" alt="Logo">
-            <a href="/">Back to 3Dashboard</a>
-        </div>
+    <div class="global-container car">
+        <h1>Car Details</h1>
+        <img src="<%= car.logo %>" alt="<%= car.brand %> Logo">
+        <h2><%= car.model %></h2>
+        <p>Brand: <%= car.brand %></p>
+        <p>Amount in Stock: <%= car.count %></p>
+        
+        <form action="/car_view/<%= car.id %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
 </body>
 
 </html>

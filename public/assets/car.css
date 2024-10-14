@@ -1,0 +1,77 @@
+.car {
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-left: 10vw;
+}
+
+/* Header Styles */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #555;
+    margin-bottom: 10px; /* Space below the model name */
+}
+
+/* Paragraph Styles */
+p {
+    margin: 5px 0; /* Space for paragraphs */
+    color: #666; /* Slightly lighter color for details */
+}
+
+/* Button Styles */
+button {
+    background-color: #e63946; /* Red background for delete button */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    margin-top: 10px; /* Space above the button */
+}
+
+button:hover {
+    background-color: #d62839; /* Darker red on hover */
+}
+
+/* Image Styles */
+img {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    margin: 15px 0; /* Space above and below the image */
+}
+
+/* Link Styles */
+a {
+    display: inline-block; /* Block for better spacing */
+    margin-top: 15px; /* Space above the link */
+    color: #007BFF; /* Link color */
+    text-decoration: none; /* No underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .global-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Adjust font size on small screens */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Adjust font size on small screens */
+    }
+
+    button {
+        width: 100%; /* Full width on smaller screens */
+    }
+}

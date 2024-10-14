@@ -6,36 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inventory</title>
     <link rel="stylesheet" href="/assets/global-styles.css" type="text/css">
+    <link rel="stylesheet" href="/assets/newCar.css" type="text/css">
 
 </head>
 
 <body>
     <%- include('navbar', {brands: allBrands}) %>
-        <div class="global-container">
-            <h1>Add new model</h1>
-            <form method="POST" action="/new_car">
-                <label for="model">Model Name:</label>
-                <input type="text" name="model" id="model">
-                <label for="brand">Brand:</label>
-                <select name="brands" id="brands">
-                    <% allBrands.map(brand=>{%>
-                        <option value="<%=brand.brandname%>">
-                            <%=brand.brandname%>
-                        </option>
-                        <% }) %>
+    <div class="global-container form-container">
+        <h1>Add New Model</h1>
+        <form method="POST" action="/new_car">
+            <label for="model">Model Name:</label>
+            <input type="text" name="model" id="model">
 
-                </select>
-                <label for="year">Year: </label>
-                <input type="number" min="1900" max="2099" step="1" value="2016" name="year" />
-                <label for="color">Color:</label>
-                <input type="text" name="color" id="color">
+            <label for="brand">Brand:</label>
+            <select name="brands" id="brands">
+                <% allBrands.map(brand => { %>
+                    <option value="<%= brand.brandname %>">
+                        <%= brand.brandname %>
+                    </option>
+                <% }) %>
+            </select>
 
-                <label for="ammount">Ammount:</label>
-                <input type="number" name="ammount" min="1" step="1" id="ammount">
-                <input type="submit" value="Add car">
-            </form>
-        </div>
+            <label for="year">Year: </label>
+            <input type="number" min="1900" max="2099" step="1" value="2016" name="year" id="year">
 
+            <label for="color">Color:</label>
+            <input type="text" name="color" id="color">
+
+            <label for="ammount">Ammount:</label>
+            <input type="number" name="ammount" min="1" step="1" id="ammount">
+
+            <input type="submit" value="Add Car">
+        </form>
+    </div>
 </body>
 
 </html>

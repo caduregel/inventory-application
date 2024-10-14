@@ -15,7 +15,7 @@ const postForm = asyncHandler(async (req, res) => {
     }
     console.log(newCar)
     db.postNewCar(newCar.brand, newCar.model, newCar.year, newCar.color, newCar.ammount)
-    res.send('   <p>Car added!</p> <a href="/">Dashboard</a> ')
+    res.redirect('/')
 })
 
 module.exports = { getForm, postForm }

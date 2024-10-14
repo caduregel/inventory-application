@@ -6,24 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brands</title>
     <link rel="stylesheet" href="/assets/global-styles.css" type="text/css">
+    <link rel="stylesheet" href="/assets/brands.css" type="text/css">
 
 </head>
 
 <body>
-    <%- include('navbar', {brands: brands}) %>
-        <div class="global-container">
-            <% brands.map(brand=>{%>
-                <img src="<%= brand.logo %>" alt="Logo">
-                <h2>
-                    <%= brand.brandname %>
-                </h2>
-                <p>Car count: <%= brand.car_count %>
-                </p>
-                <br>
-                <a href="/brands/<%= brand.brandname %>">More info</a>
-                <br>
-                <% }) %>
+    <%- include('navbar', {brands: unsortedBrands}) %>
+    <div class="global-container">
+        <div class="brand-container">
+            <% brands.map(brand => { %>
+                <div class="brand-item">
+                    <img src="<%= brand.logo %>" alt="<%= brand.brandname %> Logo">
+                    <h2><%= brand.brandname %></h2>
+                    <p>Car count: <%= brand.car_count %></p>
+                    <a href="/brands/<%= brand.brandname %>">More info</a>
+                </div>
+                
+            <% }) %>
         </div>
+    </div>
 </body>
 
 </html>

@@ -1,0 +1,66 @@
+/* All Cars Section */
+.all_cars {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    /* Space between each car entry */
+}
+
+.all_cars h2 {
+    margin: 0;
+    /* Remove margin for cleaner look */
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.all_cars p {
+    margin: 5px 0;
+    /* Spacing for car details */
+}
+
+.all_cars img {
+    max-width: 100px;
+    /* Restrict image size */
+    margin-bottom: 10px;
+    /* Space below the image */
+}
+
+.all_cars a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #86efac;
+    color: #065f46;
+    text-decoration: none;
+}
+
+.all_cars a:hover {
+    background-color: #bbf7d0;
+
+}
+
+.car-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px); /* 3 items per row */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .global-container {
+        padding: 10px;
+    }
+
+    .all_cars h2 {
+        font-size: 1.3rem;
+    }
+
+    .stats p {
+        font-size: 1rem;
+    }
+}

@@ -7,6 +7,7 @@
     <title>/<%= brandName %>
     </title>
     <link rel="stylesheet" href="/assets/global-styles.css" type="text/css">
+    <link rel="stylesheet" href="/assets/brand.css" type="text/css">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
                 <%= brandName %>
             </h1>
             <h2>Cars in stock:</h2>
-            <div class="cars">
+            <div class="all_cars">
                 <% cars.map(car=>{%>
                     <h3>
                         <%= car.model %>
