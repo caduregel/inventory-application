@@ -1,5 +1,6 @@
 const path = require("node:path");
 require("dotenv").config('./.env');
+const methodOverride = require('method-override')
 const db = require("./db/queries");
 
 // Express
@@ -7,6 +8,8 @@ const express = require("express");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
+
+app.use(methodOverride('_method'));
 
 // Views
 app.set("views", path.join(__dirname, "views"));

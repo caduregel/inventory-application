@@ -11,4 +11,14 @@ const showCar = asyncHandler(async (req, res) => {
 
     res.render('carCloseUp', { car: car, brands: brands, });
 })
-module.exports = { showCar, }
+
+const deleteCar = asyncHandler(async (req, res) => {
+    const carId = req.params.id;
+    console.log(carId)
+    db.deleteCar(carId)
+
+    // Redirect back to the car list page (or wherever you want to go after deletion)
+    res.redirect('/');
+})
+
+module.exports = { showCar, deleteCar }

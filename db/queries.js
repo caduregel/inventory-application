@@ -37,11 +37,10 @@ async function postNewCar(brand, model, year, color, ammount) {
 }
 
 async function deleteCar(carId){
-    const query = {
-        text: 'DELETE FROM cars WHERE id = $1',
-        values: [carId]
-    }
-    await pool.query(query.text, query.values)
+    const query = `DELETE FROM cars WHERE id = $1`;
+
+    // Execute the query
+    await pool.query(query, [carId]);
 }
 
 async function getCarCount(){
