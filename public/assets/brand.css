@@ -1,8 +1,13 @@
+.brand {
+    margin: 20px;
+}
+
 /* All Cars Section */
 .all_cars {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    min-width: 20vw;
     /* Space between each car entry */
 }
 

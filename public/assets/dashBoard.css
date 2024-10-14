@@ -95,7 +95,6 @@
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: calc(33.33% - 20px); /* 3 items per row */
     padding: 20px;
     text-align: center;
     transition: transform 0.2s;
@@ -103,7 +102,6 @@
 
 .car-item:hover {
     transform: translateY(-5px);
-
 }
 
 /* Responsive Design */
